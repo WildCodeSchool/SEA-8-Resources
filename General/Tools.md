@@ -3,6 +3,7 @@
 #### Online Tools:
 - [SEA 8 on Odyssey](https://odyssey.wildcodeschool.com/crews/407)
 - [Rocket Chat](https://chat.wilders.dev)
+  - [Rocket Chat Desktop App](https://releases.rocket.chat/desktop/latest/download)
 
 #### Development Software:
 ##### Please refer to myWorkplace to see whether you can install tools there, otherwise install manually from the links on here.
