@@ -1,4 +1,4 @@
-# Tools for SEA 8
+# Tools & Software Installation for SEA 8
 
 ## Online Tools:
 
