@@ -18,3 +18,4 @@
 - [13 Advanced (but useful) Git Techniques and Shortcuts](https://www.youtube.com/watch?v=ecK3EnyGD8o) by [Fireship](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA)
 - [Learn Git In 15 Minutes](https://www.youtube.com/watch?v=USjZcfj8yxE) by [Colt Steele](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw)
 - [Learn Github in 20 Minutes](https://www.youtube.com/watch?v=nhNq2kIvi9s) by [Colt Steele](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw)
+- #### From our Workshop Git / GitHub: [1.9: Resolving Merge Conflicts - Git and GitHub for Poets](https://www.youtube.com/watch?v=JtIX3HJKwfo) by [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)
