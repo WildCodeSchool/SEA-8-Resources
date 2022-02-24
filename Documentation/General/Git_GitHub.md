@@ -21,7 +21,7 @@
    - [`git reset`](#git-reset)
    - [`git stash`](#git-stash)
    - [`git tag`](#git-tag)
-3. **[Common Use Cases](#common-use-cases)**
+3. **[Common Use Cases](#common-issues)**
 4. **[Text Resources](#text-resources)**
 5. **[YouTube Videos](#youtube-videos)**
 
@@ -122,13 +122,61 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 As we can see, we directly get a status on the changes we applied. We successfully brought over the changes from the main branch to another one using `git stash`. Awesome! :partying_face:
 
-#### Further Reading:
+#### **Further Reading**
 [Official Documentation - `git stash`](https://git-scm.com/docs/git-stash)
 
-### `git tag` 1
+### `git tag`
+#### **Description**
+Manage tags which are usually used to label the finishing commit for a release version.
+
+From the [official documentation](https://git-scm.com/docs/git-tag):
+
+> Add a tag reference in `refs/tags/`, unless `-d/-l/-v` is given to delete, list or verify tags.\
+\
+Unless `-f` is given, the named tag must not yet exist.\
+\
+If one of `-a`, `-s`, or `-u <keyid>` is passed, the command creates a **tag** object, and requires a tag message. Unless `-m <msg>` or `-F <file>` is given, an editor is started for the user to type in the tag message.\
+\
+If `-m <msg`> or `-F <file>` is given and `-a`, `-s`, and `-u <keyid>` are absent, `-a` is implied.\
+\
+Otherwise, a tag reference that points directly at the given object (i.e., a lightweight tag) is created.\
+\
+A GnuPG signed tag object will be created when `-s` or `-u <keyid>` is used. When `-u <keyid>` is not used, the committer identity for the current user is used to find the GnuPG key for signing. The configuration variable `gpg.program` is used to specify custom GnuPG binary.\
+\
+Tag objects (created with `-a`, `-s`, or `-u`) are called "annotated" tags; they contain a creation date, the tagger name and e-mail, a tagging message, and an optional GnuPG signature. Whereas a "lightweight" tag is simply a name for an object (usually a commit object).\
+\
+Annotated tags are meant for release while lightweight tags are meant for private or temporary object labels. For this reason, some git commands for naming objects (like `git describe`) will ignore lightweight tags by default.
+
+#### **Common usage**
+Create a tag named `<tag name>` locally:
+```
+git tag <tag name>
+```
+Note: The tag is created from the current branch and only includes commited changes. See [`git checkout`](#git-checkout) for more information on selecting the branch.
+
+Delete a tag named `<tag name>` locally:
+```
+git tag -d <tag name>
+```
+
+Push tags to the remote:
+```
+git push --tags
+```
+
+Push a tag named `<tag name>` to the `origin` remote:
+```
+git push origin <tag name>
+```
+
+For more information on deleting tags from the remote, see Further Reading below.
+
+#### **Further Reading**
+- [Official Documentation - `git tag`](https://git-scm.com/docs/git-tag)
+- [How to Delete Remote Git Tags](https://www.w3docs.com/snippets/git/how-to-delete-remote-tags.html)
 
 ---
-## Common Use Cases
+## Common Issues
 - `git branch -m master main`
 - https://stackoverflow.com/questions/520650/make-an-existing-git-branch-track-a-remote-branch
 - https://stackoverflow.com/questions/6591213/how-do-i-rename-a-local-git-branch
@@ -147,6 +195,8 @@ As we can see, we directly get a status on the changes we applied. We successful
     - [German version](https://www.atlassian.com/de/git/tutorials/what-is-version-control)
 - **[GitHub Help Pages](https://docs.github.com/en)**
 
+[^1]: This is the main source on which the information in this page is based.
+
 ---
 ## YouTube Videos:
 - [Git Explained in 100 Seconds](https://www.youtube.com/watch?v=hwP7WQkmECE) by [Fireship](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA)
@@ -158,5 +208,3 @@ As we can see, we directly get a status on the changes we applied. We successful
 - #### From our Workshop Git / GitHub: [1.9: Resolving Merge Conflicts - Git and GitHub for Poets](https://www.youtube.com/watch?v=JtIX3HJKwfo) by [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)
   - [Playlist containing the "**Git and GitHub for Poets**" tutorial series](https://www.youtube.com/watch?v=BCQHnlnPusY&list=PLRqwX-V7Uu6ZF9C0YMKuns9sLDzK6zoiV) by [The Coding Train](https://www.youtube.com/channel/UCvjgXvBlbQiydffZU7m1_aw)
 
----
-[^1]: This is the main source on which the information in this page is based.
