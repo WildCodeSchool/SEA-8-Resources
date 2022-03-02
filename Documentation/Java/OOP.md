@@ -9,6 +9,7 @@ A feature of objects is that an object's own procedures can access and often mod
 Many of the most widely used programming languages (such as C++, Java, Python, etc.) are multi-paradigm and they support object-oriented programming to a greater or lesser degree, typically in combination with imperative, procedural programming. Significant object-oriented languages include: Java, C++, C#, Python, R, PHP, Visual Basic.NET, JavaScript, Ruby, Perl, SIMSCRIPT, Object Pascal, Objective-C, Dart, Swift, Scala, Kotlin, Common Lisp, MATLAB, and Smalltalk.
 
 ## Why do we use OOP?
+***There are four major benefits to object-oriented programming:***
 1. ***Encapsulation:***
    - ***In OOP, you bundle code into a single unit where you can determine the scope of each piece of data.***
    - Data from one class will not be accessible to all other classes unless you implement a specific way to interact with it.
@@ -27,6 +28,8 @@ Many of the most widely used programming languages (such as C++, Java, Python, e
 ## How do we implement OOP in Java?
 Based on the example given we can create the `Human` class and the inheriting classes `Student` and `Instructor` with their according data:
 
+First we create our base class `Human`:
+#### `Human.java`
 ```Java
 public class Human {
     private String name;
@@ -51,22 +54,41 @@ public class Human {
 }
 ```
 
+Then we create the `Student` and `Instructor` classes, which *override* the behavior of the `dailyRoutine()` method.
+
+***Note:** We still need to create the constructors for these two classes, even though they extend `Human`. In this case we just forward the arguments of the conbstructor to the super constructor (the constructor of the parent class). You can customize the behavior of the inheriting classes' constructors if needed.*
+
+#### `Student.java`
 ```Java
 public class Student extends Human {
+    public Student(String name, int age) {
+        // Calls parent constructor
+        super(name, age);
+    }
+
+    @Override
     public void dailyRoutine() {
         System.out.println("I am learning more about programming today.");
     }
 }
 ```
 
+#### `Instructor.java`
 ```Java
 public class Instructor extends Human {
+    public Instructor(String name, int age) {
+        // Calls parent constructor
+        super(name, age);
+    }
+
+    @Override
     public void dailyRoutine() {
         System.out.println("I am teaching more about programming today.");
     }
 }
 ```
-
+Lastly, we create a `Classroom` class which contains our `main` method to start our example. We create an instance of each of our classes `Human`, `Student` and `Instructor`. We then group them in an array to loop over them - note that the array has the type `Human`, but can still contain instances of classes inheriting from it. Finally, we iterate over the array and run each instance's `dailyRoutine()` method.
+#### `Classroom.java`
 ```Java
 public class Classroom {
     public static void main(String[] args) {
@@ -82,3 +104,11 @@ public class Classroom {
     }
 }
 ```
+Running our program results in the following output:
+```
+$ java Classroom
+I am Bob and I am existing.
+I am learning more about programming today.
+I am teaching more about programming today.
+```
+As you can see, we have successfully overridden the behaviour of our `dailyRoutine()` method!
